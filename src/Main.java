@@ -6,6 +6,10 @@ public class Main {
         cont1.exibirInformacoes();
         cont1.depositar(50.00);
         cont1.exibirInformacoes();
+        cont1.depositar(-50.00);
+        cont1.sacar(-50.00);
+        cont1.exibirInformacoes();
+
 
     }
 }

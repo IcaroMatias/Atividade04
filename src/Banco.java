@@ -35,17 +35,32 @@ public class Banco {
     // Métodos obrigatórios
 
     public void depositar(Double valor){
-        this.saldo += valor;
+        System.out.println("----------------------------");
+        if(valor <= 0) {
+            System.out.println("Não foi possivel depositar este valor!");
+        }else{
+            System.out.println("Valor do depósito: "+ valor);
+            System.out.println("Saldo após depósito: " + (this.saldo += valor));
+        }
     }
 
     public void sacar(Double valor) {
-        this.saldo -= valor;
+        System.out.println("----------------------------");
+        if(valor > this.saldo && this.saldo >= 0) {
+            System.out.println("Valor de saque: " + valor);
+            System.out.println("Saldo após saque: "+ (this.saldo -= valor));
+        } else {
+            System.out.println("Saldo insuficiente!");
+        }
     }
 
     public void exibirInformacoes () {
+        System.out.println("----------------------------");
         System.out.println("Nome do titular: "+this.titular);
         System.out.println("Número da conta: "+this.numeroConta);
         System.out.println("Saldo atual: "+this.saldo);
+        System.out.println("----------------------------");
+
     }
 
 
